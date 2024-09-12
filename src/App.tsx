@@ -1,10 +1,17 @@
-import Lista from "./componets/pages";
-import "./App.css";
+import Usuario from "./componets/admin/Usuario";
+import Producto from "./componets/admin/Producto";
+import Categoria from "./componets/admin/Categoria";
+import SubCategoria from "./componets/admin/Sub_Categoria";
+import Carrito from "./componets/admin/CarritoDeCompras";
 
 function App() {
   return (
     <div>
-      <Lista />
+      <Usuario />
+      <Producto />
+      <Categoria />
+      <SubCategoria />
+      <Carrito />
     </div>
   );
 }
