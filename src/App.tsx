@@ -4,7 +4,7 @@ import Categoria from "./componets/admin/Categoria";
 import SubCategoria from "./componets/admin/Sub_Categoria";
 import Carrito from "./componets/admin/CarritoDeCompras";
 import Registro from "./componets/pages/Registro";
-import Card from "./Card/Card";
+import Card from "./componets/Card/Card";
 import BarraDeNavegacion from "./componets/navBar";
 
 function App() {

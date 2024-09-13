@@ -12,7 +12,6 @@ function BarraDeNavegacion() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          {/* Este Nav contiene "Iniciar sesión" y se coloca a la derecha */}
           <Nav className="me-auto">
             <Nav.Link className="text-warning" href="#home">
               Home
@@ -20,8 +19,6 @@ function BarraDeNavegacion() {
             <Nav.Link className="text-warning" href="#link">
               Link
             </Nav.Link>
-
-            {/* Dropdown modificado con texto amarillo */}
             <NavDropdown
               title={<span className="text-warning">Categorias</span>}
               id="basic-nav-dropdown"
@@ -54,7 +51,6 @@ function BarraDeNavegacion() {
             </NavDropdown>
           </Nav>
 
-          {/* Sección para "Iniciar sesión" que se coloca a la izquierda */}
           <Nav>
             <Nav.Link className="text-warning" href="#login">
               Iniciar sesión
