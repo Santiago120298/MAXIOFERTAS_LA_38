@@ -2,22 +2,27 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { useNavigate } from "react-router-dom";
 
 function BarraDeNavegacion() {
+  const navigate = useNavigate();
   return (
     <Navbar expand="lg" className="bg-success">
       <Container>
-        <Navbar.Brand className="text-warning" href="#home">
+        <Navbar.Brand onClick={() => navigate("/")} className="text-warning">
           Maxiofertas la 38
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link className="text-warning" href="#home">
+            <Nav.Link onClick={() => navigate("/")} className="text-warning">
               Home
             </Nav.Link>
-            <Nav.Link className="text-warning" href="#link">
-              Link
+            <Nav.Link
+              className="text-warning"
+              onClick={() => navigate("/Productos")}
+            >
+              Productos
             </Nav.Link>
             <NavDropdown
               title={<span className="text-warning">Categorias</span>}
@@ -54,6 +59,14 @@ function BarraDeNavegacion() {
           <Nav>
             <Nav.Link className="text-warning" href="#login">
               Iniciar sesión
+            </Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link
+              className="text-warning"
+              onClick={() => navigate("/registro")}
+            >
+              Registro
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
