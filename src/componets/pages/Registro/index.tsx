@@ -2,7 +2,7 @@ import Footer from "../../footer";
 import BarraDeNavegacion from "../../navBar";
 import Registro from "./Registro";
 
-export default function index() {
+export default function Register() {
   return (
     <div>
       <BarraDeNavegacion />
