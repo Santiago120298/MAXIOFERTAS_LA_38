@@ -10,7 +10,7 @@ interface Product {
   imagen: string;
 }
 
-const Card: React.FC = () => {
+const CardHome: React.FC = () => {
   const [producto, setProducto] = useState<Product[]>([]);
 
   // Función para obtener los productos desde la API
@@ -30,7 +30,8 @@ const Card: React.FC = () => {
   return (
     <div className="container mt-5">
       <div className="row">
-        {producto.map((producto) => (
+        {/* Solo muestra los primeros 3 productos */}
+        {producto.slice(0, 6).map((producto) => (
           <div className="col-md-4" key={producto.id}>
             <div className="card mb-4">
               <img
@@ -51,4 +52,4 @@ const Card: React.FC = () => {
   );
 };
 
-export default Card;
+export default CardHome;

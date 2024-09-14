@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import 'bootstrap/dist/css/bootstrap.min.css'; // Asegúrate de importar Bootstrap
+import "bootstrap/dist/css/bootstrap.min.css"; // Asegúrate de importar Bootstrap
 
 interface UserForm {
   numero_doc: number;
@@ -18,7 +18,7 @@ interface UserForm {
 const Registro: React.FC = () => {
   const [formData, setFormData] = useState<UserForm>({
     numero_doc: 0,
-    tipo_doc: "",
+    tipo_doc: "", // Valor vacío por defecto
     nombre: "",
     apellidos: "",
     direccion: "",
@@ -29,7 +29,9 @@ const Registro: React.FC = () => {
     contraseña_confirmada: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -40,7 +42,10 @@ const Registro: React.FC = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3001/api/register", formData);
+      const response = await axios.post(
+        "http://localhost:3001/api/register",
+        formData
+      );
       alert("Usuario creado con éxito: " + response.data.message);
     } catch (error) {
       console.error("Error al crear el usuario", error);
@@ -67,15 +72,26 @@ const Registro: React.FC = () => {
             </div>
 
             <div className="form-group mb-3">
-              <label>Tipo de documento</label>
-              <input
-                type="text"
+              <label>Documento</label>
+              <select
                 className="form-control"
                 name="tipo_doc"
                 value={formData.tipo_doc}
                 onChange={handleChange}
                 required
-              />
+              >
+                <option value="" disabled>
+                  Tipo de documento
+                </option>
+                <option value="Cédula de ciudadanía">
+                  Cédula de ciudadanía
+                </option>
+                <option value="NIUP">NIUP</option>
+                <option value="Cédula de extranjería">
+                  Cédula de extranjería
+                </option>
+                <option value="Pasaporte">Pasaporte</option>
+              </select>
             </div>
 
             <div className="form-group mb-3">
@@ -174,7 +190,11 @@ const Registro: React.FC = () => {
               />
             </div>
 
-            <button type="submit" className="btn btn-primary w-100" style={{ display: "block" }}>
+            <button
+              type="submit"
+              className="btn btn-primary w-100"
+              style={{ display: "block" }}
+            >
               Registrar
             </button>
           </form>

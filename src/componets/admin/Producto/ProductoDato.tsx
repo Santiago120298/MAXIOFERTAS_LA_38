@@ -6,5 +6,6 @@ export interface TipoDato {
   tamaño: string;
   precio: number;
   disponibilidad: number;
+  imagen: string;
   caracteristicas: string;
 }

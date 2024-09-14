@@ -17,7 +17,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-dark text-light py-4">
+    <footer className="bg-dark text-light py-4 mt-5">
       <Container>
         <Row className="text-center text-md-start">
           {/* Sección de Redes Sociales */}
@@ -71,9 +71,6 @@ const Footer: React.FC = () => {
                 <span className="ms-2">info@yourcompany.com</span>
               </li>
             </ul>
-            <Button variant="primary" href="#contact">
-              Get in Touch
-            </Button>
           </Col>
 
           {/* Sección de Enlaces Útiles */}
